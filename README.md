@@ -23,13 +23,13 @@ The algorithm follows these steps:
 - Continue until all possible valid sublists are found.
 
 ### 2. Compute Weighted Averages
-- For each valid sublist, compute its weighted average strength:
+ For each valid sublist, compute its weighted average strength:
    
    $$
    wavg = \frac{\sum (strength_i \times count_i)}{5} 
    $$
 
-- Store all `wavg` values.
+ Store all `wavg` values.
 
 ### 3. Calculate Mean and Standard Deviation
 - Compute the **mean** of all weighted averages:
