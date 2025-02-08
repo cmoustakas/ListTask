@@ -5,8 +5,9 @@ This project implements an algorithm to find two sublists from a given list of `
 
 1. Each sublist has a total **count** sum of exactly **5**.
 2. The **weighted average strength** of each sublist, computed as:
-   
-   \[ wavg = \frac{\sum (strength_i \times count_i)}{5} \]
+   $$
+    wavg = \frac{\sum (strength_i \times count_i)}{5} 
+   $$
    
    should be as close as possible between the two selected sublists.
 
@@ -22,24 +23,28 @@ The algorithm follows these steps:
 
 ### 2. Compute Weighted Averages
 - For each valid sublist, compute its weighted average strength:
-  
-  \[ wavg = \frac{\sum (strength_i \times count_i)}{5} \]
+  $$
+   wavg = \frac{\sum (strength_i \times count_i)}{5}
+  $$
 
 - Store all `wavg` values.
 
 ### 3. Calculate Mean and Standard Deviation
 - Compute the **mean** of all weighted averages:
-  
-  \[ \text{mean\_wavg} = \frac{1}{n} \sum wavg_i \]
+  $$
+  \text{mean\_wavg} = \frac{1}{n} \sum wavg_i
+  $$
 
 - Compute the **standard deviation**:
-  
-  \[ \sigma = \sqrt{\frac{1}{n} \sum (wavg_i - \text{mean\_wavg})^2} \]
+  $$
+  \sigma = \sqrt{\frac{1}{n} \sum (wavg_i - \text{mean\_wavg})^2}
+  $$
 
 ### 4. Select Two Groups
 - Identify two sublists `(i, j)` where:
-  
-  \[ |wavg_i - wavg_j| < \sigma \]
+  $$
+  |wavg_i - wavg_j| < \sigma
+  $$
   
 - This ensures that their weighted averages are statistically similar and minimizes imbalance.
 
@@ -51,17 +56,10 @@ The algorithm follows these steps:
 ## Usage
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-repo/entity-grouping.git
-   cd entity-grouping
+   git clone git@github.com:cmoustakas/ListTask.git
+   cd ListTask
+   ./build_n_run_tests.sh
    ```
-2. Run the algorithm with your dataset.
-3. The output will display the selected sublists or indicate that no valid pair was found.
-
-## Future Improvements
-- Optimize the sublist generation process for efficiency.
-- Experiment with alternative selection strategies beyond standard deviation.
-- Provide a visualization tool for debugging and analysis.
-
 ## License
 This project is open-source and available under the [MIT License](LICENSE).
 
