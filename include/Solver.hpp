@@ -10,7 +10,7 @@ class CandidatesStorage;
 
 namespace solver {
 
-enum SolverResult { SUCCESS, FAIL };
+enum class SolverResult { SUCCESS, FAIL };
 
 class ProblemSolver {
 public:
@@ -18,26 +18,29 @@ public:
   ~ProblemSolver() = default;
 
   /**
-   * @brief trySolve
-   * @param solution
-   * @return
+   * @brief trySolve Try to find a pair of lists of Entitys that the sum of
+   * count of each list is equal to five and the average strength of each list
+   * is relatively similar
+   * @param solution The solution
+   * @return Success or Fail
    */
   SolverResult trySolve(std::pair<ListOfEntities, ListOfEntities> &solution);
 
   /**
-   * @brief setList
+   * @brief setList Sets the list if default constructor used
    * @param list
    */
   void setList(ListOfEntities &list) { m_list = std::move(list); }
 
   /**
-   * @brief getList
+   * @brief getList Return the list
    * @return
    */
   ListOfEntities getList() const noexcept { return m_list; }
 
   /**
-   * @brief getFallbacksRounds
+   * @brief getFallbacksRounds Returns how many times we fallbacked, only for
+   * testing
    * @return
    */
   int getFallbacksRounds() const noexcept { return m_fallback_counter; }
