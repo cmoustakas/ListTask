@@ -79,8 +79,8 @@ runAccumulativeIteration(const ListOfEntities &list,
   for (auto accumulate_it = init_it; accumulate_it != list.end();
        ++accumulate_it) {
 
-    if (accumulate_it->m_count < 0) {
-      throw std::runtime_error("Negative values are not allowed");
+    if (accumulate_it->m_count <= 0) {
+      throw std::runtime_error("Only Positive values are allowed");
     }
 
     const auto chk_sum = candidates.getSum() + accumulate_it->m_count;
@@ -108,6 +108,12 @@ void findCandidatesOnAccumulatedTgtCount(
   CandidatesStorage candidate_iterators(kTargetAccumulatedCounts);
 
   while (!list.empty()) {
+
+    // Early exit on greater than 5
+    if (list.begin()->m_count > kTargetAccumulatedCounts) {
+      list.pop_front();
+      continue;
+    }
 
     // Early push on 5
     if (list.begin()->m_count == kTargetAccumulatedCounts) {

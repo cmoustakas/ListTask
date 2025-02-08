@@ -47,7 +47,7 @@ static inline float standardDeviation(const std::vector<float> &strengths) {
   return stddev;
 }
 
-std::pair<int, int> pickSimilar(const std::vector<float> strengths,
+std::pair<int, int> pickSimilar(const std::vector<float> &strengths,
                                 const float stddev) {
 
   for (size_t i = 0; i < strengths.size() - 1; ++i) {
@@ -57,7 +57,7 @@ std::pair<int, int> pickSimilar(const std::vector<float> strengths,
           std::abs(strengths[i] - strengths[j]) < stddev;
       if (similarity_criterion) {
         // Usualy the happy path is the final return but in this case it is more
-        // convinient
+        // convenient
         return std::make_pair(i, j);
       }
     }

@@ -11,7 +11,7 @@ static void generateRandomListOfEntities(size_t lists_size,
   std::random_device rd;
   std::mt19937 gen(rd());
 
-  std::uniform_int_distribution<int> count_r(0, 10);
+  std::uniform_int_distribution<int> count_r(1, 10);
   std::uniform_int_distribution<int> strength_r(0, 300);
 
   for (int i = 0; i < lists_size; ++i) {
@@ -107,7 +107,7 @@ TEST(SimilarityTests, SimilarityOnSamples) {
 }
 
 TEST(SolverTests, RealScenarioRun) {
-  const size_t list_len = 1e3;
+  const size_t list_len = 1e4;
   ListOfEntities list;
 
   generateRandomListOfEntities(list_len, list);
