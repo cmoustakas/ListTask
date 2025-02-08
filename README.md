@@ -5,8 +5,9 @@ This project implements an algorithm to find two sublists from a given list of `
 
 1. Each sublist has a total **count** sum of exactly **5**.
 2. The **weighted average strength** of each sublist, computed as:
+
    $$
-    wavg = \frac{\sum (strength_i \times count_i)}{5} 
+   wavg = \frac{\sum (strength_i \times count_i)}{5} 
    $$
    
    should be as close as possible between the two selected sublists.
