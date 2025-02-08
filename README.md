@@ -32,18 +32,18 @@ The algorithm follows these steps:
  Store all `wavg` values.
 
 ### 3. Calculate Mean and Standard Deviation
-- Compute the **mean** of all weighted averages:
+  Compute the **mean** of all weighted averages:
    $$
    mean_wavg = \frac{1}{n} \sum wavg_i
    $$
 
-- Compute the **standard deviation**:
+  Compute the **standard deviation**:
   $$
   \sigma = \sqrt{\frac{1}{n} \sum (wavg_i - \text{mean\_wavg})^2}
   $$
 
 ### 4. Select Two Groups
-- Identify two sublists `(i, j)` where:
+  Identify two sublists `(i, j)` where:
   $$
   |wavg_i - wavg_j| < \sigma
   $$
