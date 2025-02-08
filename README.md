@@ -33,22 +33,25 @@ The algorithm follows these steps:
 
 ### 3. Calculate Mean and Standard Deviation
   Compute the **mean** of all weighted averages:
+  
    $$
    mean_wavg = \frac{1}{n} \sum wavg_i
    $$
 
   Compute the **standard deviation**:
+  
   $$
   \sigma = \sqrt{\frac{1}{n} \sum (wavg_i - \text{mean\_wavg})^2}
   $$
 
 ### 4. Select Two Groups
   Identify two sublists `(i, j)` where:
+  
   $$
   |wavg_i - wavg_j| < \sigma
   $$
   
-- This ensures that their weighted averages are statistically similar and minimizes imbalance.
+ This ensures that their weighted averages are statistically similar and minimizes imbalance.
 
 ### 5. Fallback Strategy: Shuffling & Retrying
 - If no valid sublist pairs are found, the algorithm **shuffles** the initial list and retries using the same approach.
