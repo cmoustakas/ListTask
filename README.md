@@ -18,9 +18,9 @@ The algorithm follows these steps:
 ### 1. Generate Candidate Sublists
 - Iterate through the list of `Entity` objects.
 - Construct sublists by adding elements until the total **count** reaches 5.
-- If **count exceeds 5**, backtrack and try another combination.
-- If **count equals 5**, store the sublist as a valid candidate.
-- Continue until all possible valid sublists are found.
+- If **count exceeds 5**, pop the last element tath caused the exceed and continue.
+- If **count equals 5**, store the sublist as a valid candidate and erase the Entities from the List.
+- Continue until the List is empty.
 
 ### 2. Compute Weighted Averages
  For each valid sublist, compute its weighted average strength:
