@@ -35,13 +35,13 @@ The algorithm follows these steps:
   Compute the **mean** of all weighted averages:
   
    $$
-   mean_wavg = \frac{1}{n} \sum wavg_i
+   mean_w = \frac{1}{n} \sum wavg_i
    $$
 
   Compute the **standard deviation**:
   
   $$
-  \sigma = \sqrt{\frac{1}{n} \sum (wavg_i - \text{mean\_wavg})^2}
+  \sigma = \sqrt{\frac{1}{n} \sum (wavg_i - \text{mean_w})^2}
   $$
 
 ### 4. Select Two Groups
