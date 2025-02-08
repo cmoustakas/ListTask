@@ -24,17 +24,17 @@ The algorithm follows these steps:
 
 ### 2. Compute Weighted Averages
 - For each valid sublist, compute its weighted average strength: 
-  $$
-  wavg = \frac{\sum (strength_i \times count_i)}{5}
-  $$
+   $$
+   wavg = \frac{\sum (strength_i \times count_i)}{5} 
+   $$
 
 - Store all `wavg` values.
 
 ### 3. Calculate Mean and Standard Deviation
 - Compute the **mean** of all weighted averages:
-  $$
-  mean_wavg = \frac{1}{n} \sum wavg_i
-  $$
+   $$
+   mean_wavg = \frac{1}{n} \sum wavg_i
+   $$
 
 - Compute the **standard deviation**:
   $$
