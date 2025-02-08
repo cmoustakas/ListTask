@@ -41,7 +41,7 @@ The algorithm follows these steps:
   Compute the **standard deviation**:
   
   $$
-  \sigma = \sqrt{\frac{1}{n} \sum (wavg_i - \text{mean_w})^2}
+  sigma = \sqrt{\frac{1}{n} \sum (wavg_i - \text{mean_w})^2}
   $$
 
 ### 4. Select Two Groups
