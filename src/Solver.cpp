@@ -71,7 +71,7 @@ private:
 };
 
 static void
-runAccumulativeIteration(const ListOfEntities &list,
+runAccumulativeIteration(ListOfEntities &list,
                          const ListOfEntities::const_iterator &init_it,
                          CandidatesStorage &candidates) {
 
@@ -81,6 +81,13 @@ runAccumulativeIteration(const ListOfEntities &list,
 
     if (accumulate_it->m_count <= 0) {
       throw std::runtime_error("Only Positive values are allowed");
+    }
+
+    // Early exit on greater than 5
+    if (accumulate_it->m_count > kTargetAccumulatedCounts) {
+      accumulate_it = list.erase(accumulate_it);
+      accumulate_it--;
+      continue;
     }
 
     const auto chk_sum = candidates.getSum() + accumulate_it->m_count;
