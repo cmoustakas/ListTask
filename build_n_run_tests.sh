@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 echo "[+] Build and run Unit tests"
 # Update and initialize git submodules
 git submodule update --init --recursive
