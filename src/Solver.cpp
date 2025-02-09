@@ -85,8 +85,7 @@ runAccumulativeIteration(ListOfEntities &list,
 
     // Early exit on greater than 5
     if (accumulate_it->m_count > kTargetAccumulatedCounts) {
-      accumulate_it = list.erase(accumulate_it);
-      accumulate_it--;
+      accumulate_it = (list.erase(accumulate_it)--);
       continue;
     }
 
